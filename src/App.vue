@@ -1,13 +1,20 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
-  </div>
+  <v-app>
+    <v-main>
+      <router-view></router-view>
+    </v-main>
+  </v-app>
 </template>
-
+<script>
+export default {
+  data() {
+    return {};
+  },
+  created() {
+    console.log(process.env);
+  },
+};
+</script>
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
