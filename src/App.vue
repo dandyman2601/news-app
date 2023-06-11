@@ -1,6 +1,17 @@
 <template>
   <v-app>
     <v-main>
+      <v-toolbar>
+        <v-btn icon>
+          <v-icon>mdi-menu</v-icon>
+        </v-btn>
+        <v-spacer></v-spacer>
+        <v-toolbar-title class="logo">
+          <h2>AlvinDaily</h2>
+        </v-toolbar-title>
+        <v-spacer></v-spacer>
+        <v-icon>mdi-magnify</v-icon>
+      </v-toolbar>
       <router-view></router-view>
     </v-main>
   </v-app>
@@ -10,30 +21,12 @@ export default {
   data() {
     return {};
   },
-  created() {
-    console.log(process.env);
-  },
+  created() {},
 };
 </script>
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+@import "./scss/variables.scss";
+v-app {
+  font-family: $body-font-family !important;
 }
 </style>

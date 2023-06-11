@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,900;1,400;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;500;700&family=Lobster&display=swap');
+
+// Set the font families
+$body-font-family: 'Merriweather', serif;
+$heading-font-family: 'Libre Franklin', sans-serif;
+
+//Logo typography
+.logo {
+  font-family: 'Lobster', cursive;
+}
+// Headline typography
+h1 {
+  font-family: 'Merriweather', serif;
+  font-weight: 900;
+  font-style: italic;
+}
+$h1-font-family: 'Merriweather', serif;
+$h1-font-weight: 900;
+$h1-font-style: italic;
+
+$h2-font-family: 'Libre Franklin', sans-serif;
+
+$h3-font-family: 'Merriweather', serif;
+$h3-font-weight: 900;
+$h3-font-style: italic;
+
+$h4-font-family: 'Libre Franklin', sans-serif;
+
+$h5-font-family: 'Libre Franklin', sans-serif;
+
+$h6-font-family: 'Merriweather', serif;
+$h6-font-weight: 900;
+$h6-font-style: italic;
+
+// Body typography
+$body-1-font-family: 'Merriweather', serif;
+
+$body-2-font-family: 'Libre Franklin', sans-serif;
+
+// Button typography
+$button-font-family: 'Libre Franklin', sans-serif;
+$button-font-weight: 700;
+
+// Caption typography
+$caption-font-family: 'Merriweather', serif;
+$caption-font-style: italic;
+
+// Overline typography
+$overline-font-family: 'Libre Franklin', sans-serif;
+$overline-font-weight: 700;
