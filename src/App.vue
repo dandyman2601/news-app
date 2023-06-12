@@ -6,8 +6,8 @@
           <v-icon>mdi-menu</v-icon>
         </v-btn>
         <v-spacer></v-spacer>
-        <v-toolbar-title class="logo">
-          <h2>AlvinDaily</h2>
+        <v-toolbar-title>
+          <h2 class="logo">AlvinDaily</h2>
         </v-toolbar-title>
         <v-spacer></v-spacer>
         <v-icon>mdi-magnify</v-icon>
