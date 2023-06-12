@@ -9,6 +9,9 @@ export default {
     SET_TOP_HEADLINES(state, headlines) {
       state.topHeadlines = headlines;
     },
+    UPDATE_TITLE(state, { title, index }) {
+      state.topHeadlines.articles[index].title = title;
+    },
   },
   getters: {
     GET_TOP_HEADLINES: (state) => state.topHeadlines,
