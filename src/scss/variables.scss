@@ -15,37 +15,49 @@ h1 {
   font-weight: 900;
   font-style: italic;
 }
-$h1-font-family: 'Merriweather', serif;
-$h1-font-weight: 900;
-$h1-font-style: italic;
 
-$h2-font-family: 'Libre Franklin', sans-serif;
+h2 {
+  font-family: 'Libre Franklin', sans-serif;
+}
 
-$h3-font-family: 'Merriweather', serif;
-$h3-font-weight: 900;
-$h3-font-style: italic;
+h3 {
+  font-family: 'Merriweather', serif;
+  font-weight: 900;
+  font-style: italic;
+}
 
-$h4-font-family: 'Libre Franklin', sans-serif;
+h4 {
+  font-family: 'Libre Franklin', sans-serif;
+}
 
-$h5-font-family: 'Libre Franklin', sans-serif;
+h5 {
+  font-family: 'Libre Franklin', sans-serif;
+}
 
-$h6-font-family: 'Merriweather', serif;
-$h6-font-weight: 900;
-$h6-font-style: italic;
+h6 {
+  font-family: 'Merriweather', serif;
+  font-weight: 900;
+  font-style: italic;
+}
 
 // Body typography
-$body-1-font-family: 'Merriweather', serif;
-
-$body-2-font-family: 'Libre Franklin', sans-serif;
+body {
+  font-family: 'Merriweather', serif;
+}
 
 // Button typography
-$button-font-family: 'Libre Franklin', sans-serif;
-$button-font-weight: 700;
-
+button {
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 700;
+}
 // Caption typography
-$caption-font-family: 'Merriweather', serif;
-$caption-font-style: italic;
+caption {
+  font-family: 'Merriweather', serif;
+  font-style: italic;
+}
 
 // Overline typography
-$overline-font-family: 'Libre Franklin', sans-serif;
-$overline-font-weight: 700;
+.overline {
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 700;
+}
