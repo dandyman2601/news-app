@@ -20,7 +20,7 @@
             {{ articleData.source.name }}
           </v-card-text>
           <v-toolbar dense flat floating>
-            <v-btn icon @click="clickEdit">
+            <v-btn v-if="hover" icon @click="clickEdit">
               <v-icon>mdi-pencil</v-icon>
             </v-btn>
 
@@ -31,7 +31,7 @@
         </div>
       </v-card>
     </v-hover>
-    <v-dialog v-model="dialogVisible" persistent max-width="400">
+    <v-dialog v-model="dialogVisible" persistent width="40vw">
       <v-card>
         <v-card-title>
           <span class="headline">Edit Title</span>
@@ -63,6 +63,9 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
+import mixin from "@/mixins/mixins";
+
 export default {
   props: ["articleData", "articleIndex"],
   name: "CardComponent",
@@ -81,6 +84,7 @@ export default {
     };
   },
   methods: {
+    ...mapActions("history", ["addSingleArticle"]),
     clickEdit() {
       this.editedTitle = this.articleData.title;
       this.dialogVisible = true;
@@ -89,20 +93,19 @@ export default {
       this.dialogVisible = false;
     },
     saveEdit() {
-      // Emit the event with the edited title and index
       this.$emit("edit-title", { title: this.editedTitle, index: this.articleIndex });
-      // Close the dialog
       this.dialogVisible = false;
     },
     navigateToDetail(article) {
-      console.log(article, "ARTICLE DATA");
-      this.$router.push({ name: "detail", params: { id: this.articleIndex, data: article } });
+      const slug = this.slugify(article.title);
+      this.$router.push({ name: "detail", params: { id: slug, data: article } });
       this.showDetailPage = true;
+      //  this.$router.push({ name: "detail", params: { id: slug } })
+      // this.addSingleArticle(article);
+      // Uncomment above along with getters related to singleArticle to use vuex method
     },
   },
-  components: {
-    // DetailView: () => import("@/views/DetailView.vue"),
-  },
+  mixins: [mixin],
 };
 </script>
 
