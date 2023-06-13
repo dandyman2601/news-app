@@ -12,7 +12,7 @@ const routes = [
     component: ListView,
   },
   {
-    path: "/:id",
+    path: "/article/:id",
     name: "detail",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
