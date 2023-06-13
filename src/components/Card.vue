@@ -118,10 +118,11 @@ export default {
 .card-title {
   display: -webkit-box;
   height: 4rem;
+  white-space: normal; /* Allow line breaks within words */
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-  line-clamp: 3;
+  -webkit-line-clamp: 2; /* Limit the text to 3 lines */
+  text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+  word-break: break-word; /* Break words and letters to the next line */
   overflow: hidden;
-  text-overflow: ellipsis;
 }
 </style>
