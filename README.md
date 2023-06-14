@@ -58,7 +58,7 @@ npm install
 2. Compiles and hot-reloads for development:
 
 ```
-npm run serve
+npm run dev
 ```
 
 3. Open your browser and visit: `http://localhost:8080`
