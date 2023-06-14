@@ -51,7 +51,7 @@
           <v-btn color="grey" text @click="cancelEdit">Cancel</v-btn>
           <v-btn
             :disabled="titleValidationRules[0](editedTitle) !== true"
-            color="green"
+            color="blue"
             text
             @click="saveEdit"
             >Save</v-btn
