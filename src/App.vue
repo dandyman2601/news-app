@@ -33,23 +33,32 @@
     <Dialog :dialog-mode="mode" :dialog="searchDialog" @close-dialog="closeDialog" />
     <v-main>
       <!-- :key helps rerender while on same view -->
-      <router-view :key="$route.fullPath"></router-view>
+      <router-view :key="$route.fullPath" :error="error"></router-view>
     </v-main>
   </v-app>
 </template>
 
 <script>
+import { mapActions, mapGetters } from "vuex";
+
 export default {
   data() {
     return {
       drawer: false,
       searchDialog: false,
+      error: null,
       drawerItems: [
         {
           title: "History",
           icon: "mdi-history",
           mode: "history",
           style: "",
+        },
+        {
+          title: "Filter",
+          icon: "mdi-filter",
+          mode: "filter",
+          style: "blue--text",
         },
         {
           title: "Make Error Call",
@@ -61,7 +70,14 @@ export default {
       mode: "search",
     };
   },
+  computed: {
+    ...mapGetters("newsapi", ["GET_TOP_HEADLINES_ERROR"]),
+  },
   methods: {
+    ...mapActions("newsapi", ["fetchNewsSources", "fetchErrorHeadlines"]),
+    async fetchSources() {
+      await this.fetchNewsSources();
+    },
     goBackHome() {
       this.$router.push({ name: "home" }).catch((err) => console.warn(err));
     },
@@ -69,10 +85,14 @@ export default {
       this.$router.push(route);
       this.drawer = false; // Close the drawer after navigation
     },
-    clickDrawerItem(item) {
+    async clickDrawerItem(item) {
       this.mode = item.mode;
       if (this.mode !== "trigger") {
         this.openDialog(this.mode);
+      } else {
+        await this.fetchErrorHeadlines();
+        this.error = this.GET_TOP_HEADLINES_ERROR;
+        this.drawer = false;
       }
     },
     openDialog(mode) {
@@ -82,6 +102,9 @@ export default {
     closeDialog() {
       this.searchDialog = false;
     },
+  },
+  created() {
+    this.fetchSources();
   },
   components: {
     Dialog: () => import("@/components/Dialog.vue"),
