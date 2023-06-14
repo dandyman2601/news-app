@@ -44,7 +44,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters("history", ["getSingleArticle"]),
+    ...mapGetters("history", ["GET_SINGLE_ARTICLE"]),
   },
   methods: {
     ...mapActions("history", ["addVisitedArticle"]),
@@ -55,7 +55,7 @@ export default {
   },
   created() {
     this.detail = this.$route.params.data;
-    // this.detail = this.getSingleArticle;
+    // this.detail = this.GET_SINGLE_ARTICLE;
     // Uncomment above along with getters related to singleArticle to use vuex method
     this.setDetailPage(this.detail);
   },

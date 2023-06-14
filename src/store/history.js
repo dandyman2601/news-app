@@ -14,10 +14,10 @@ export const history = {
   },
   getters: {
     // Getter to retrieve the list of visited articles
-    getVisitedArticles(state) {
+    GET_VISITED_ARTICLES(state) {
       return state.visitedArticles;
     },
-    getSingleArticle(state) {
+    GET_SINGLE_ARTICLE(state) {
       return state.singleArticle;
     },
   },
